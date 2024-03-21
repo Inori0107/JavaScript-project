@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 記錄高度
+        let height = 100
+        // 紀錄距離
+        let distance = 0
+        for (let i = 1; i <= 10; i++) {
+            // 計算距離 + 落下高度
+            distance += height
+            // 計算反彈 高度減半
+            height /= 2
+            // 距離 + 反彈高度
+            // 第 10 次只需要算烙下 不需要算反彈
+            if (i !== 10) {
+                distance += height
+            }
+        }
+
+        document.write(`高度 ${height}，距離 ${distance}`)
+    </script>
+</body>
+
+</html>
