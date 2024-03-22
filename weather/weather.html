@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const data = [
+            { 'name': 'Monday', 'value_1': 18.2, 'value_2': 23.8, 'value_3': 20.6 },
+            { 'name': 'Tuesday', 'value_1': 17.3, 'value_2': 25.1, 'value_3': 21.5 },
+            { 'name': 'Wednesday', 'value_1': 15.0, 'value_2': 20.6, 'value_3': 18.4 },
+            { 'name': 'Thursday', 'value_1': 13.4, 'value_2': 17.8, 'value_3': 15.7 },
+        ]
+        // document.write(`<table border=1>`)
+        // for (let i in data) {
+        //     document.write(`<tr>`)
+        //     document.write(`<td>${data[i].name}</td>`)
+        //     document.write(`<td>${data[i].value_1}</td>`)
+        //     document.write(`<td>${data[i].value_2}</td>`)
+        //     document.write(`<td>${data[i].value_3}</td>`)
+        //     document.write(`</tr>`)
+        // }
+
+        document.write(`<table border=1>`)
+        for (let i in data) {
+            document.write(`<tr>`)
+            document.write(`<td>${data[i].name}</td>`)
+            document.write(`<td>${Object.values(data.)}</td>`)
+            document.write(`<td>${data[i].value_2}</td>`)
+            document.write(`<td>${data[i].value_3}</td>`)
+            document.write(`</tr>`)
+        }
+    </script>
+</body>
+
+</html>
