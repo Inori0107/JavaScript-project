@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const data = [
+            [33, 32, 56, 45, 33],
+            [77, 33, 68, 45, 23],
+            [43, 55, 43, 67, 65],
+        ]
+        const price = [12, 16, 10, 14, 15]
+
+        for (let i in data) {
+            let seller_money = 0
+            let price_money = 0
+            for (let j in data[i]) {
+                price_money = data[i][j]
+                price_money *= price[j]
+                seller_money += price_money
+            } document.write(seller_money + `<br>`)
+        }
+
+        let sum_A = 0
+        for (let i = 0; i < data.length; i++) {
+            sum_A += data[i][0]
+        } sum_A *= price[0]
+        document.write(sum_A + `<br>`)
+
+        let sum_B = 0
+        for (let i = 0; i < data.length; i++) {
+            sum_B += data[i][1]
+        } sum_B *= price[1]
+        document.write(sum_B + `<br>`)
+
+        let sum_C = 0
+        for (let i = 0; i < data.length; i++) {
+            sum_C += data[i][2]
+        } sum_C *= price[2]
+        document.write(sum_C + `<br>`)
+
+        let sum_D = 0
+        for (let i = 0; i < data.length; i++) {
+            sum_D += data[i][3]
+        } sum_D *= price[3]
+        document.write(sum_D + `<br>`)
+
+        let sum_E = 0
+        for (let i = 0; i < data.length; i++) {
+            sum_E += data[i][4]
+        } sum_E *= price[4]
+        document.write(sum_E + `<br>`)
+        //     const sum = [0, 0, 0, 0, 0];
+        //   for (let i in data) {
+        //     for (let j in data[i]) {
+        //       sum[j] += data[i][j];
+        //     }
+        //   }
+        //   for (let i in sum) {
+        //     document.write(sum[i] * price[i] + "<br />");
+        //   }
+    </script>
+</body>
+
+</html>
