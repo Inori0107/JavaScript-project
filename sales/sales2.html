@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const data = [
+        {
+          name: "A",
+          price: 12,
+          sales: [
+            { name: "銷售員1", value: 33 },
+            { name: "銷售員2", value: 77 },
+            { name: "銷售員3", value: 43 },
+          ],
+        },
+        {
+          name: "B",
+          price: 16,
+          sales: [
+            { name: "銷售員1", value: 32 },
+            { name: "銷售員2", value: 33 },
+            { name: "銷售員3", value: 55 },
+          ],
+        },
+        {
+          name: "C",
+          price: 10,
+          sales: [
+            { name: "銷售員1", value: 56 },
+            { name: "銷售員2", value: 68 },
+            { name: "銷售員3", value: 43 },
+          ],
+        },
+        {
+          name: "D",
+          price: 14,
+          sales: [
+            { name: "銷售員1", value: 45 },
+            { name: "銷售員2", value: 45 },
+            { name: "銷售員3", value: 67 },
+          ],
+        },
+        {
+          name: "E",
+          price: 15,
+          sales: [
+            { name: "銷售員1", value: 33 },
+            { name: "銷售員2", value: 23 },
+            { name: "銷售員3", value: 65 },
+          ],
+        },
+      ];
+      document.write(`<hr>`);
+      //   各項金額
+      for (let i in data) {
+        for (let j in data[i].sales) {
+          let money = 0;
+          money += data[i].price * data[i].sales[j].value;
+          document.write(
+            `${data[i].sales[j].name}的 產品${data[i].name}的 價錢為${money}<br>`
+          );
+        }
+      }
+      document.write(`<hr>`);
+
+      //   銷售員總金額
+      let sellers_Money = [0, 0, 0];
+      for (let i in data) {
+        for (let j in data[i].sales) {
+          sellers_Money[j] += data[i].price * data[i].sales[j].value;
+        }
+      }
+      for (let i in sellers_Money) {
+        document.write(
+          `${data[i].sales[i].name}的銷售總金額為${sellers_Money[i]}<br>`
+        );
+      }
+      document.write(`<hr>`);
+
+      //   產品銷售總金額
+      for (let i in data) {
+        let product_Money = 0;
+        let product_sales = 0;
+        for (let j in data[i].sales) {
+          product_sales += data[i].sales[j].value;
+        }
+        product_Money += data[i].price * product_sales;
+        document.write(`產品${data[i].name}的 價錢為${product_Money}<br>`);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
