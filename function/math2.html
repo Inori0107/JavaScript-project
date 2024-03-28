@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const calculate = (n, m) => {
+        // 次數
+        let count = 0;
+        // 總和
+        let sum = 0;
+        // 迴圈執行條件
+        // 總和 <= m
+        while (sum <= m) {
+          // 總和 + 目前數字
+          sum += n;
+          // 數字 + 1
+          n++;
+          // 次數 + 1
+          count++;
+        }
+        return count;
+      };
+
+      const number1 = parseInt(prompt("n"));
+      const number2 = parseInt(prompt("m"));
+      console.log(calculate(number1, number2));
+    </script>
+  </body>
+</html>

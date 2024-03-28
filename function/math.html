@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const calculate = (n, m) => {
+        // 因為 i 沒有最大值 所以用 while
+        let i = 0;
+        let sum = 0;
+        while (sum <= m) {
+          sum += n;
+          n++;
+          i++;
+          console.log(n);
+        }
+        return i;
+      };
+
+      //   為了不更改值 所以新增變數
+      const number1 = parseInt(prompt("n"));
+      const number2 = parseInt(prompt("m"));
+      console.log(calculate(number1, number2));
+
+      //  n = 1 , m = 5 , calculate = 3
+      //  1 + 2 + 3 > 5
+      //  0 => 1                 n
+      //  1 => 1 + 1+1           n + n+1
+      //  2 => 1 + 1+1 + 1+1+1   n + n+1 + n+2
+    </script>
+  </body>
+</html>

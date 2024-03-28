@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const data = ["乾", "兌", "離", "震", "巽", "坎", "艮", "坤"];
+      const gua = (array) => {
+        result[0] = number1 % 8;
+        result[1] = number2 % 8;
+
+        result[2] = number3 % 6;
+
+        let result = [0, 0, 0];
+
+        return result;
+      };
+
+      const number1 = parseInt(prompt("第一個數字"));
+      const number2 = parseInt(prompt("第二個數字"));
+      const number3 = parseInt(prompt("第三個數字"));
+      const numbers = [number1, number2, number3];
+      const result = gua(numbers);
+      console.log(result[0]); // 輸出 離
+      console.log(result[1]); // 輸出 震
+      console.log(result[2]); // 輸出 2
+    </script>
+  </body>
+</html>
