@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const rand = (min, max) => {
+        let x = Math.round(Math.random() * max + 1);
+        while (x < min || x > max) {
+          x = Math.round(Math.random() * max + 1);
+        }
+        return x;
+      };
+      document.write(rand(5, 10));
+    </script>
+  </body>
+</html>

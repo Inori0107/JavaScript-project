@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function power() {
+        let numbers_A = [];
+        while (numbers_A.length < 6) {
+          let number = Math.floor(Math.random() * 38) + 1;
+          if (numbers_A.includes(number)) continue;
+          numbers_A.push(number);
+        }
+        let number_B = Math.floor(Math.random() * 8 + 1);
+        return { numbers_A, number_B };
+      }
+      let numbers = power();
+      document.write(
+        `A區號碼${numbers.numbers_A}<br>
+        B區號碼${numbers.number_B}`
+      );
+    </script>
+  </body>
+</html>

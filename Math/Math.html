@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const rand = (min, max) => {
+        const numbers = [];
+        // 將 min ~ max 之間的數字 放入陣列
+        while (min <= max) {
+          numbers.push(min);
+          min++;
+        }
+        // console.log(numbers);
+        // 會出現 0 ~ max 之間的數字
+        // Math.random() * Number => 0 ~ Number間的數字
+        // 設置一個接收的變數 randomIndex
+        const randomIndex = Math.floor(Math.random() * numbers.length);
+        return numbers[randomIndex];
+      };
+      const result = rand(-18, 10);
+      document.write(result);
+    </script>
+  </body>
+</html>
