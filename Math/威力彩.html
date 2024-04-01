@@ -10,11 +10,11 @@
       function power() {
         let numbers_A = [];
         while (numbers_A.length < 6) {
-          let number = Math.floor(Math.random() * 38) + 1;
+          let number = Math.round(Math.random() * 38);
           if (numbers_A.includes(number)) continue;
           numbers_A.push(number);
         }
-        let number_B = Math.floor(Math.random() * 8 + 1);
+        let number_B = Math.round(Math.random() * 8);
         return { numbers_A, number_B };
       }
       let numbers = power();
