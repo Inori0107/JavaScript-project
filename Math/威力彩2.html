@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      const pool_A = [
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-        21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38,
-      ];
-      const pool_B = [1, 2, 3, 4, 5, 6, 7, 8];
-      function power() {
-        const numbers_A = [];
-        for (let i = 0; i < 6; i++) {
-          // 印出隨機元素 但須將它轉成 陣列的索引 => 避免重複
-          let randomIndex_A = Math.floor(Math.random() * pool_A.length);
-          let number = pool_A[randomIndex_A]; // 取得 pool_A 中的元素值
-          numbers_A.push(number);
-          // 從陣列中刪除並獲取隨機元素
-          pool_A.splice(randomIndex_A, 1);
-        }
-        const numbers_B = pool_B[Math.floor(Math.random() * pool_B.length)];
-        console.log(numbers_B);
-        return { numbers_A, numbers_B };
-      }
-      let numbers = power();
-      document.write(
-        `A區號碼${numbers.numbers_A}<br>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			const pool_A = [
+				1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38
+			];
+			// for (let i = 0; i < 38; i++) {
+			// 	pool_A.push(i);
+			// }
+			// const pool_A = Array.from({ length: 38 }, (value, index) => {
+			// 	return index + 1;
+			// });
+
+			const pool_B = [1, 2, 3, 4, 5, 6, 7, 8];
+			function power() {
+				const numbers_A = [];
+				for (let i = 0; i < 6; i++) {
+					// 印出隨機元素 但須將它轉成 陣列的索引 => 避免重複
+					let randomIndex_A = Math.floor(Math.random() * pool_A.length);
+					let number = pool_A[randomIndex_A]; // 取得 pool_A 中的元素值
+					numbers_A.push(number);
+					// 從陣列中刪除並獲取隨機元素
+					pool_A.splice(randomIndex_A, 1);
+				}
+				const numbers_B = pool_B[Math.floor(Math.random() * pool_B.length)];
+				console.log(numbers_B);
+				return { numbers_A, numbers_B };
+			}
+			let numbers = power();
+			document.write(
+				`A區號碼${numbers.numbers_A}<br>
         B區號碼${numbers.numbers_B}`
-      );
-    </script>
-  </body>
+			);
+		</script>
+	</body>
 </html>
+
