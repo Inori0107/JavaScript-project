@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 通用 function
+			const rand = (min, max) => {
+				return Math.round(Math.random() * (max - min)) + min;
+			};
+			const groupA = [];
+
+			// for
+			for (let i = 0; i < 6; i++) {
+				const number = rand(1, 38);
+				// -- 去倒回 未取成功的次數
+				if (groupA.includes(number)) {
+					i--;
+				} else {
+					groupA.push(number);
+				}
+			}
+			// for (let i = 0; i < 6; ) {
+			// 	const number = rand(1, 38);
+			// 	if (!groupA.includes(number)) {
+			// 		i++;
+			// 	} else {
+			// 		groupA.push(number);
+			// 	}
+			// }
+
+			// groupA.length = 0 or groupA.splice(0, groupA.length) 清空陣列
+
+			//while
+			while (groupA.length < 6) {
+				const number = rand(1, 38);
+				if (!groupA.includes(number)) {
+					groupA.push(number);
+				}
+			}
+			console.log(groupA);
+		</script>
+	</body>
+</html>
