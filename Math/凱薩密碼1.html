@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			const password = (_word, _numberStr) => {
+				let answer = "";
+				let _number = Number(_numberStr);
+				for (let i = 0; i < _word.length; i++) {
+					let result = _word.charCodeAt(i);
+					if (result >= 65 && result <= 90) {
+						answer += String.fromCharCode(((result - 65 + _number) % 26) + 97);
+					} else if (result >= 97 && result <= 122) {
+						answer += String.fromCharCode(((result - 97 + _number) % 26) + 65);
+					}
+					// console.log(result);
+				}
+				return answer;
+			};
+			const word = prompt("請輸入英文單詞");
+			const number = prompt("請輸入數字");
+			document.write(password(word, number));
+		</script>
+	</body>
+</html>
