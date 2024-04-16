@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.box {
+				box-sizing: border-box;
+				width: 300px;
+				height: 300px;
+				border: 1px solid;
+			}
+			.color {
+				width: 180px;
+				height: 50px;
+			}
+			.button {
+				float: right;
+				width: 70px;
+				height: 50px;
+				font-size: 16px;
+				cursor: pointer;
+			}
+			.box2 {
+				width: 300px;
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<div class="box2">
+			<input type="range" class="color" min="0" max="255" />
+			<span class="number">0</span>
+			<button class="button">隨機</button>
+		</div>
+		<div class="box2">
+			<input type="range" class="color" min="0" max="255" />
+			<span class="number">0</span>
+			<button class="button">隨機</button>
+		</div>
+		<div class="box2">
+			<input type="range" class="color" min="0" max="255" />
+			<span class="number">0</span>
+			<button class="button">隨機</button>
+		</div>
+		<script>
+			const color = document.getElementsByClassName("color");
+			const button = document.getElementsByClassName("button");
+			const box = document.getElementsByClassName("box");
+			const number = document.getElementsByClassName("number");
+
+			// 滑動
+			for (let i = 0; i < color.length; i++) {
+				color[i].oninput = () => {
+					box[0].style.backgroundColor = `rgb(${color[0].value}, ${color[1].value}, ${color[2].value})`;
+					// 呈現數字
+					number[i].innerText = color[i].value;
+				};
+			}
+			// 隨機按鈕
+			for (let i = 0; i < button.length; i++) {
+				button[i].onclick = () => {
+					color[i].value = Math.floor(Math.random() * 255);
+					box[0].style.backgroundColor = `rgb(${color[0].value}, ${color[1].value}, ${color[2].value})`;
+					number[i].innerText = color[i].value;
+				};
+			}
+		</script>
+	</body>
+</html>

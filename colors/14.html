@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				font-family: '微軟正黑體';
+			}
+
+			body {
+				background: url(https://cdn.pixabay.com/photo/2019/03/15/13/22/color-4057072_1280.jpg) no-repeat;
+				background-size: 1980px;
+			}
+
+			#container {
+				background-image: linear-gradient(45deg, #777 0%, #fff 25%, #777 100%);
+				padding: 48px 48px;
+				position: absolute;
+				border-radius: 24px;
+				box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4);
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			#div {
+				margin: auto;
+				width: 360px;
+				height: 360px;
+				border-radius: 16px;
+				box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.5);
+				background: rgb(0, 0, 0);
+			}
+
+			div {
+				margin: auto;
+				width: 360px;
+				padding-bottom: 12px;
+				clear: both;
+			}
+
+			input[type='range'] {
+				appearance: none;
+				width: 160px;
+				height: 28px;
+				outline: none;
+				background: none;
+				overflow: hidden;
+				cursor: pointer;
+			}
+
+			input[type="range"]::-webkit-slider-runnable-track {
+				background-color: #ddd;
+				border-radius: 15px;
+				overflow: hidden;
+				
+			}
+
+			input[type='range']::-webkit-slider-thumb {
+				-webkit-appearance: none;
+				position: relative;
+				width: 28px;
+				height: 28px;
+				background: radial-gradient(#fff ,rgb(107, 107, 107) 65%);
+				border: 1.5px solid #575757;
+				border-radius: 50%;
+				box-shadow: -130px 0 0 115px rgb(163, 163, 163);
+				z-index: 2;
+				/* transition: 2s; */
+			}
+
+			span {
+				display: inline-block;
+				width: 68px;
+				font-size: 28px;
+			}
+
+			button {
+				background: #fff;
+				padding: 2px 8px;
+				border: none;
+				border-radius: 4px;
+				box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);
+				transition: 0.1s;
+				font-size: 24px;
+			}
+
+			#reset {
+				padding-bottom: 12px;
+				padding-left: 214px;
+			}
+
+			#white,
+			#black {
+				background: #636363;
+				color: #fff;
+				font-weight: bold;
+				
+			}
+
+			#white:hover,
+			#black:hover {
+				background: #ffffff;
+				color: #000000;
+				font-weight: bolder;
+				cursor: pointer;
+			}
+
+			#random-red:hover {
+				color: deeppink;
+				box-shadow: 0 0 2px 1px rgba(255, 0, 170, 0.8);
+				font-weight: bold;
+				cursor: pointer;
+			}
+
+			#random-green:hover {
+				color: rgb(0, 220, 0);
+				box-shadow: 0 0 2px 1px rgb(3, 216, 3);
+				font-weight: bold;
+				cursor: pointer;
+			}
+
+			#random-blue:hover {
+				color: rgb(1, 158, 255);
+				box-shadow: 0 0 2px 1px rgba(0, 85, 255, 0.8);
+				font-weight: bold;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="div"></div>
+			<br />
+			<div id="reset">
+				<button id="black">全黑</button>
+				&nbsp;
+				<button id="white">全白</button>
+			</div>
+			
+			<div>
+				<input type="range" max="255" min="0" value="0" step="1" id="red" />
+				&nbsp;&nbsp;&nbsp;
+				<span id="red-value">0</span>
+				<button id="random-red">R : 隨機</button>
+			</div>
+			<div>
+				<input type="range" max="255" min="0" value="0" step="1" id="green" />
+				&nbsp;&nbsp;&nbsp;
+				<span id="green-value">0</span>
+				<button id="random-green">G : 隨機</button>
+			</div>
+			<div>
+				<input type="range" max="255" min="0" value="0" step="1" id="blue" />
+				&nbsp;&nbsp;&nbsp;
+				<span id="blue-value">0</span>
+				<button id="random-blue">B : 隨機</button>
+			</div>
+		</div>
+		<script>
+			// RED
+			const randomRed = document.getElementById('random-red')
+			const red = document.getElementById('red')
+			const redValue = document.getElementById('red-value')
+			red.addEventListener('input', () => {
+				redValue.textContent = red.value
+				changeColor()
+			})
+
+			randomRed.onclick = () => {
+				red.value = Math.round(Math.random() * 255)
+				redValue.textContent = red.value
+				changeColor()
+			}
+
+			// GREEN
+			const randomGreen = document.getElementById('random-green')
+			const green = document.getElementById('green')
+			const greenValue = document.getElementById('green-value')
+			green.addEventListener('input', () => {
+				greenValue.textContent = green.value
+				changeColor()
+			})
+
+			randomGreen.onclick = () => {
+				green.value = Math.round(Math.random() * 255)
+				greenValue.textContent = green.value
+				changeColor()
+			}
+
+			// BLUE
+			const blue = document.getElementById('blue')
+			const blueValue = document.getElementById('blue-value')
+			const changeBlueValue = () => {}
+			blue.addEventListener('input', () => {
+				blueValue.textContent = blue.value
+				changeColor()
+			})
+			const randomBlue = document.getElementById('random-blue')
+			randomBlue.onclick = () => {
+				blue.value = Math.round(Math.random() * 255)
+				blueValue.textContent = blue.value
+				changeColor()
+			}
+
+			// Change RGB
+			const div = document.getElementById('div')
+			const changeColor = () => {
+				div.style.background = `rgb(${red.value},${green.value},${blue.value})`
+			}
+
+			// Reset
+			const white = document.getElementById('white')
+			const black = document.getElementById('black')
+			white.onclick = () => {
+				div.style.background = `rgb(255,255,255)`
+				redValue.textContent = '255'
+				greenValue.textContent = '255'
+				blueValue.textContent = '255'
+				red.value = 255
+				green.value = 255
+				blue.value = 255
+			}
+
+			black.onclick = () => {
+				div.style.background = `rgb(0,0,0)`
+				redValue.textContent = '0'
+				greenValue.textContent = '0'
+				blueValue.textContent = '0'
+				red.value = 0
+				green.value = 0
+				blue.value = 0
+			}
+			
+
+			// const black = () => {
+			// 	div.style.background = `rgb(0,0,0)`
+			// }
+		</script>
+	</body>
+</html>

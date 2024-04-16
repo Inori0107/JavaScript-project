@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			#color {
+				width: 300px;
+				height: 300px;
+				border: 1px solid black;
+				background: #000;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="color"></div>
+		<!-- 紅色 -->
+		<input type="range" name="" class="range" min="0" max="255" value="0" />
+		<span class="text">0</span>
+		<input type="button" value="隨機" class="random" />
+		<!-- 綠色 -->
+		<input type="range" name="" class="range" min="0" max="255" value="0" />
+		<span class="text">0</span>
+		<input type="button" value="隨機" class="random" />
+		<!-- 藍色 -->
+		<input type="range" name="" class="range" min="0" max="255" value="0" />
+		<span class="text">0</span>
+		<input type="button" value="隨機" class="random" />
+
+		<script>
+			const color = document.getElementById("color");
+			const range = document.getElementById("range");
+			const text = document.getElementsByClassName("text");
+			const random = document.getElementsByClassName("random");
+
+			for (let i = 0; i < random.length; i++) {
+				range[i].addEventListener("input", () => {
+					text[i].innerText = range[i].value;
+					color.style.background = `rgb(${range[0].value},${range[1].value},${range[2].value})`;
+				});
+				random[i].addEventListener("click", () => {
+					range[i].value = Math.round(Math.random() * 255);
+					text[i].innerText = range[i].value;
+					color.style.background = `rgb(${range[0].value},${range[1].value},${range[2].value})`;
+				});
+			}
+		</script>
+	</body>
+</html>
